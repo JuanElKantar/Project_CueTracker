@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="stylesheet" type="text/css" href="../static/css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador</title>
+</head>
+<body>
+ 
+  <div class="contenedor">
+ 
+    <div id="contador">00:00:00</div>
+   
+    <form action="/finalizar_partida" method="POST">
+
+      <input type="hidden" id="HoraFin" name="HoraFin">
+      <button id="botonFinalizar" class="boton-finalizar" onclick="finalizarPartida()">Finalizar Partida</button>
+    </form>
+   
+    <div class="caja">
+        <h1>JUGADOR 1</h1>
+        <div class="caja-contador">
+          <p class="puntaje" id="plocal">0</p>
+        </div>
+        <div class="contenedor-de-botones">
+          <button class="boton-incremento" onclick="incrementJ1(-1)">-1</button>
+          <button class="boton-incremento" onclick="incrementJ1(1)">+1</button>
+          <button class="boton-incremento" onclick="incrementJ1(2)">+2</button>
+        </div>
+      </div>
+ 
+      <button class="boton-undo" onclick="undo()">UNDO</button>
+ 
+    </div>
+ 
+    <script src="../static/js/script.js"></script>
+    <script>
+      function finalizarPartida() {
+          // Obtener el puntaje del elemento caja-contador
+          var puntajeLocal = document.getElementById('plocal').innerText;
+      
+          // Obtener la hora actual
+          var horaActual = new Date();
+      
+          // Obtener el campo oculto HoraFin
+          var horaFinInput = document.getElementById('HoraFin');
+      
+          // Establecer el valor del campo oculto con la hora actual
+          horaFinInput.value = horaActual.toLocaleTimeString();
+      
+          // Crear un campo oculto para almacenar el puntaje
+          var puntajeInput = document.createElement('input');
+          puntajeInput.type = 'hidden';
+          puntajeInput.name = 'puntaje_local';
+          puntajeInput.value = puntajeLocal;
+      
+          // Agregar el campo oculto del puntaje al formulario
+          var formulario = document.querySelector('form');
+          formulario.appendChild(puntajeInput);
+      
+          // Redirigir al usuario a la página de inicio de sesión (ruta /login)
+          window.location.href = '/login';
+      }
+      </script>
+
+  </body>
+  </html>

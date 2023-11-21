@@ -1,0 +1,416 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+ 
+@font-face {
+  font-family: cursedTimerUlil;
+  src: url(CursedTimerUlil-Aznm.ttf);
+}
+
+.contenedor {
+  background-color: #1b244a;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.dropbtn {
+  color: #9aabd8;
+  border: 2px solid #9aabd8;
+  font-family: cursedTimerUlil;
+  text-decoration: none;
+  background-color: #1b244a;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1b244a;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #9aabd8;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.fecha {
+  color: #9aabd8;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.fecha-actual {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.caja {
+  width: 210px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+h1 {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.caja-contador {
+  width: 170px;
+  height: 140px;
+  background-color: #080001;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 120px;
+}
+
+.puntaje {
+  color: #f94f6d;
+  font-family: cursedTimerUlil;
+  font-size: 90px;
+}
+
+.contenedor-de-botones {
+  display: flex;
+  gap: 10px;
+}
+
+.boton-incremento {
+  color: #9aabd8;
+  border: 2px solid #9aabd8;
+  font-family: cursedTimerUlil;
+  text-decoration: none;
+  background-color: #1b244a;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.boton-incremento:hover {
+  background-color:#9aabd8;
+  color: #1b244a;
+}
+
+.boton-undo {
+color: #9aabd8;
+border: 2px solid #9aabd8;
+font-family: cursedTimerUlil;
+text-decoration: none;
+background-color: #1b244a;
+padding: 10px 20px;
+border-radius: 5px;
+margin-top: 20px;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+.boton-undo:hover {
+background-color: #9aabd8;
+color: #1b244a;
+}
+
+.contador-partida {
+color: white;
+font-family: cursedTimerUlil;
+font-size: 48px;
+margin-top: 20px;
+}
+
+.boton-finalizar {
+color: #9aabd8;
+border: 2px solid #9aabd8;
+font-family: cursedTimerUlil;
+text-decoration: none;
+background-color: #1b244a;
+padding: 10px 20px;
+border-radius: 5px;
+margin-top: 20px;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+
+.boton-finalizar:hover {
+background-color: #9aabd8;
+color: #1b244a;
+}
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+
+  th {
+    background-color: #333;
+    color: #fff;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  a {
+    text-decoration: none;
+    color: #007BFF;
+    margin-right: 10px;
+  }
+
+  .delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+  }
+
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  nav {
+    background-color:#1b244a;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+  }
+
+  li a:hover {
+    background-color:#1b244a;
+  }
+
+  main {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  button {
+    background-color:#1b244a;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #1b244a;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+
+
+
+  body {
+    background-color: #fff; /* Cambio del color de fondo principal a blanco */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white; /* Cambio del color de fondo del encabezado */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #1b244a; /* Cambio del color de fondo de la barra de navegación */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    display: inline;
+    margin-right: 10px;
+}
+
+li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+li a:hover {
+    background-color: #0056b3;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #1b244a; /* Cambio del color de fondo de los botones */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+input[type="submit"] {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+

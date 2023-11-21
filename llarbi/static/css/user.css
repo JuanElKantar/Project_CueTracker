@@ -1,0 +1,53 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos del sidebar */
+.sidebar {
+    background-color: #333;
+    color: #fff;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+}
+
+.sidebar h2 {
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+    padding: 5px 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+}
+
+/* Estilos del contenido principal */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+}

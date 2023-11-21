@@ -1,0 +1,82 @@
+CREATE DATABASE billarG8;
+USE billarG8;
+
+CREATE TABLE `partida` (
+	`idPartida` INT(11) NOT NULL AUTO_INCREMENT,
+	`GameMode` VARCHAR(13) NOT NULL COLLATE 'utf8mb4_general_ci',
+	`Players` INT(11) NOT NULL,
+	`GameTime` TIME NOT NULL,
+	`HoraInicio` TIME NOT NULL,
+	`HoraFin` TIME NOT NULL,
+	PRIMARY KEY (`idPartida`) USING BTREE
+)
+COLLATE='utf8mb4_general_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=38
+;
+
+CREATE TABLE users (
+  user_id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  userName VARCHAR(50) NOT NULL,
+  lastName VARCHAR(50) NOT NULL,
+  password_user VARCHAR(50) NOT NULL,
+  nodocumento VARCHAR(12) NOT NULL UNIQUE, -- Agregar UNIQUE aquí
+  email VARCHAR(100) NOT NULL,
+  partida_id INT,
+  id_rol INT NOT NULL
+);
+
+CREATE TABLE estadisticas (
+  idEstadisticas INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  idPartida INT NOT NULL,
+  partidasJugadas INT NOT NULL,
+  partidasGanadas INT NOT NULL,
+  partidasPerdidas INT NOT NULL,
+  puntajeTotal INT NOT NULL,
+  tiempoJugado TIME NOT NULL,
+  fechaUltimaPartida DATE NOT NULL,
+ jugador_id INt
+);
+
+
+CREATE TABLE rol_user (
+  id_rol INT NOT NULL PRIMARY KEY,
+  descripcion VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE users_estadisticas (
+  id_users_estadisticas INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  user_id INT NOT NULL,
+  idEstadisticas INT NOT NULL,
+  CONSTRAINT fk_users_estadisticas_user_id FOREIGN KEY (user_id) REFERENCES users (user_id),
+  CONSTRAINT fk_users_estadisticas_idEstadisticas FOREIGN KEY (idEstadisticas) REFERENCES estadisticas (idEstadisticas)
+);
+
+CREATE TABLE users_partida (
+  id_users_partida INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+  user_id INT NOT NULL,
+  partida_id INT NOT NULL,
+  CONSTRAINT fk_users_partida_user_id FOREIGN KEY (user_id) REFERENCES users (user_id),
+  CONSTRAINT fk_users_partida_partida_id FOREIGN KEY (partida_id) REFERENCES partida (idPartida)
+);
+
+CREATE TABLE users_rol (
+  id_user_rol INT AUTO_INCREMENT NOT NULL primary key,
+  user_id INT NOT NULL,
+  id_rol INT NOT NULL,
+  CONSTRAINT fk_users_rol_user_id FOREIGN KEY (user_id) REFERENCES users (user_id),
+  CONSTRAINT fk_users_rol_id_rol FOREIGN KEY (id_rol) REFERENCES rol_user (id_rol)
+);
+INSERT INTO users (userName, lastName, password_user, nodocumento ,email, partida_id, id_rol) VALUES ('Admin', 'GeOcho', 'admin123', '123456789' ,'correo@ejemplo.com', 1, 1);
+
+
+SELECT * FROM users;
+
+
+
+
+
+
+
+drop database billarG8;
+

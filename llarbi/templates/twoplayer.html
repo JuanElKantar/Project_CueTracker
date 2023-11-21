@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="stylesheet" type="text/css" href="../static/css/estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Players</title>
+</head>
+<body>
+  
+  <div class="contenedor">
+  
+    <div id="contador">00:00:00</div>
+
+    <form action="/finalizar_partida" method="POST">
+        <!-- Otros campos de formulario si los tienes -->
+        <input type="hidden" id="HoraFin" name="HoraFin">
+        <button id="botonFinalizar" class="boton-finalizar" onclick="finalizarPartida()">Finalizar Partida</button>
+  
+      </form>
+
+<script>
+  // Obtener el elemento del contador
+  var contadorElemento = document.getElementById('contador');
+
+  // Función para actualizar el contador
+  function actualizarContador() {
+    // Obtener la fecha y hora actual
+    var fechaActual = new Date();
+
+    // Obtener los componentes de la fecha y hora actual
+    var horas = fechaActual.getHours();
+    var minutos = fechaActual.getMinutes();
+    var segundos = fechaActual.getSeconds();
+
+    // Formatear los componentes para que tengan dos dígitos
+    horas = horas < 10 ? '0' + horas : horas;
+    minutos = minutos < 10 ? '0' + minutos : minutos;
+    segundos = segundos < 10 ? '0' + segundos : segundos;
+
+    // Mostrar el contador en el elemento correspondiente
+    contadorElemento.textContent = horas + ':' + minutos + ':' + segundos;
+  }
+
+  // Actualizar el contador cada segundo
+  setInterval(actualizarContador, 1000);
+
+</script>
+<p class="fecha-actual">Fecha actual: </p>
+    <div class="caja">
+      <h1>LOCAL</h1>
+      <div class="caja-contador">
+        <p class="puntaje" id="plocal">0</p>
+      </div>
+      <div class="contenedor-de-botones">
+        <button class="boton-incremento" onclick="incrementL(-1)">-1</button>
+        <button class="boton-incremento" onclick="incrementL(1)">+1</button>
+        <button class="boton-incremento" onclick="incrementL(2)">+2</button>
+        
+      </div>
+    </div>
+    <div class="caja">
+      <h1>VISITANTE</h1>
+      <div class="caja-contador">
+        <p class="puntaje" id="pvis">0</p>
+      </div>
+      <div class="contenedor-de-botones">
+        <button class="boton-incremento" onclick="incrementV(-1)">-1</button>
+        <button class="boton-incremento" onclick="incrementV(1)">+1</button>
+        <button class="boton-incremento" onclick="incrementV(2)">+2</button>
+        
+      </div>
+    </div>  
+    <button class="boton-undo" onclick="undo()">UNDO</button>
+
+  </div>
+
+  <script src="../static/js/script.js"></script>
+  <script>
+    function configuracionPartida() {
+      // Redireccionar a la página de configuración de partida
+      window.location.href = 'config_partida.html';
+    }
+  </script>
+  <script>
+    function finalizarPartida() {
+        // Obtener la hora actual
+        var horaActual = new Date();
+
+        // Obtener el campo oculto HoraFin
+        var horaFinInput = document.getElementById('HoraFin');
+
+        // Establecer el valor del campo oculto con la hora actual
+        horaFinInput.value = horaActual.toLocaleTimeString();
+
+        // Redirigir al usuario a la página de inicio de sesión (ruta /login)
+        window.location.href = '/login';
+    }
+</script>
+</body>
+</html>

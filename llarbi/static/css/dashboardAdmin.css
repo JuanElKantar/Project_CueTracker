@@ -1,0 +1,35 @@
+.settings-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #007BFF;
+    cursor: pointer;
+}
+
+.sidebar {
+    width: 250px;
+    transition: width 0.3s;
+}
+
+.content {
+    margin-left: 250px;
+    transition: margin 0.3s;
+}
+
+.sidebar-minimized {
+    width: 50px;
+}
+
+.hidden-content {
+    display: none;
+}
+
+
+/* Cambia el color de fondo al pasar el cursor sobre una opción */
+ul.hidden-content li a:hover {
+    background-color: #4c4c4c; /* Cambia el color a un gris más claro al pasar el cursor */
+}
+
+
+

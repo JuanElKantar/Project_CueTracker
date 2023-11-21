@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/user.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/dashboardAdmin.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/mapa_mesas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Agrega el enlace a FontAwesome -->
+    <title>Mapa de Mesas</title>
+</head>
+
+<body>
+    <div class="sidebar" id="sidebar">
+        <i class="fas fa-cogs settings-icon" id="settings-icon"></i> <!-- Icono de ajustes -->
+        <h2>Opciones</h2>
+        <ul>
+            <li><i class="fas fa-chart-line"></i> <a href="/admin">Dashboard</a></li>
+            <li><i class="fas fa-users"></i> <a href="/admin/users">Usuarios Registrados</a></li>
+            <li><i class="fas fa-users"></i> <a href="/admin/partida">Partidas Registradas</a></li>
+            <li><i class="fas fa-map"></i> <a href="/mapa_mesas">Mapa de mesas</a></li>
+            <li><i class="fas fa-file-download"></i> <a href="/download_report">Descargar Informes</a></li>
+            <li><i class="fas fa-sign-out-alt"></i> <a href="/">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <header>
+            <h1>Mapa de Mesas</h1>
+        </header>
+        <main>
+            <div class="contenedor-mesas">
+                <!-- Agregar botones de filtro -->
+                <button onclick="mostrarTodasMesas()">Mostrar Todas</button>
+                <button onclick="mostrarMesasOcupadas()">Mostrar Ocupadas</button>
+                <button onclick="mostrarMesasDesocupadas()">Mostrar Desocupadas</button>
+                {% for mesa in mesas_info %}
+                    <div class="mesa {% if mesa['Ocupada'] %} ocupada {% else %} libre {% endif %}" onclick="mostrarDetalleMesa('{{ mesa['NumeroMesa'] }}', '{{ mesa['GameMode'] }}', '{{ mesa['Players'] }}', '{{ mesa['HoraInicio'] }}')">
+                        <span>Mesa {{ mesa['NumeroMesa'] }}</span>
+                        {% if mesa['Ocupada'] %}
+                            <p>Estado: Ocupada</p>
+                            <p>Tipo de juego: {{ mesa['GameMode'] }}</p>
+                            <p>Número de jugadores: {{ mesa['Players'] }}</p>
+                            <p>Hora de inicio: {{ mesa['HoraInicio'] }}</p>
+                        {% else %}
+                            <p>Estado: Libre</p>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        <div class="detalle-mesa">
+    </div>
+</main>
+
+    </div>
+    <script src="../static/js/mapa_mesas.js"></script>
+</body>
+</html>

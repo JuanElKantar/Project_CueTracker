@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <link rel="stylesheet" type="text/css" href="../static/css/cuatroplayer.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4 Players</title>
+</head>
+<body>
+
+  <div class="contenedor">
+  
+    <div id="contador">00:00:00</div>
+
+    <form action="/finalizar_partida" method="POST">
+        <!-- Otros campos de formulario si los tienes -->
+        <input type="hidden" id="HoraFin" name="HoraFin">
+        <button id="botonFinalizar" class="boton-finalizar" onclick="finalizarPartida()">Finalizar Partida</button>
+  
+      </form>
+    <!-- Jugador 1 -->
+    <div class="movement1">
+    <div class="caja">
+      <h1>JUGADOR 1</h1>
+      <div class="caja-contador">
+        <p class="puntaje" id="pj1">0</p>
+      </div>
+      <div class="contenedor-de-botones">
+        <button class="boton-incremento" onclick="incrementJ1(-1)">-1</button>
+        <button class="boton-incremento" onclick="incrementJ1(1)">+1</button>
+        <button class="boton-incremento" onclick="incrementJ1(2)">+2</button>
+      </div>
+    </div>
+</div>
+    <!-- Jugador 2 -->
+    <div class="movement2">
+    <div class="caja">
+      <h1>JUGADOR 2</h1>
+      <div class="caja-contador">
+        <p class="puntaje" id="pj2">0</p>
+      </div>
+      <div class="contenedor-de-botones">
+        <button class="boton-incremento" onclick="incrementJ2(-1)">-1</button>
+        <button class="boton-incremento" onclick="incrementJ2(1)">+1</button>
+        <button class="boton-incremento" onclick="incrementJ2(2)">+2</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Jugador 3 -->
+    <div class="movement3">
+    <div class="caja">
+      <h1>JUGADOR 3</h1>
+      <div class="caja-contador">
+        <p class="puntaje" id="pj3">0</p>
+      </div>
+      <div class="contenedor-de-botones">
+        <button class="boton-incremento" onclick="incrementJ3(-1)">-1</button>
+        <button class="boton-incremento" onclick="incrementJ3(1)">+1</button>
+        <button class="boton-incremento" onclick="incrementJ3(2)">+2</button>
+      </div>
+    </div>
+</div>
+    <!-- Jugador 4 -->
+    <div class="movement4">
+    <div class="caja">
+      <h1>JUGADOR 4</h1>
+      <div class="caja-contador">
+        <p class="puntaje" id="pj4">0</p>
+      </div>
+      <div class="contenedor-de-botones">
+        <button class="boton-incremento" onclick="incrementJ4(-1)">-1</button>
+        <button class="boton-incremento" onclick="incrementJ4(1)">+1</button>
+        <button class="boton-incremento" onclick="incrementJ4(2)">+2</button>
+      </div>
+    </div>
+    </div>  
+
+    <button class="boton-undo" onclick="undo()">UNDO</button>
+  </div>
+
+  <script src="../static/js/script4.js"></script>
+  <script>
+    function finalizarPartida() {
+        // Obtener la hora actual
+        var horaActual = new Date();
+
+        // Obtener el campo oculto HoraFin
+        var horaFinInput = document.getElementById('HoraFin');
+
+        // Establecer el valor del campo oculto con la hora actual
+        horaFinInput.value = horaActual.toLocaleTimeString();
+
+        // Redirigir al usuario a la página de inicio de sesión (ruta /login)
+        window.location.href = '/login';
+    }
+</script>
+</body>
+</html>

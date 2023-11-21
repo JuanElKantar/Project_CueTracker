@@ -1,0 +1,70 @@
+<!-- Archivo 2: usuariosRegistrados.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/user.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/dashboardAdmin.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/tablaUserview.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Agrega el enlace a FontAwesome -->
+    <title>Usuarios Registrados</title>
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <i class="fas fa-cogs settings-icon" id="settings-icon"></i> <!-- Icono de ajustes -->
+        <h2>Opciones</h2>
+        <ul>
+            <li><i class="fas fa-chart-line"></i> <a href="/admin">Dashboard</a></li>
+            <li><i class="fas fa-users"></i> <a href="/admin/users">Usuarios Registrados</a></li>
+            <li><i class="fas fa-users"></i> <a href="/admin/partida">Partidas Registradas</a></li>
+            <li><i class="fas fa-file-download"></i> <a href="/download_report">Descargar Informes</a></li>
+            <li><i class="fas fa-sign-out-alt"></i> <a href="/">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <header>
+            <h1>Usuarios Registrados</h1>
+        </header>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre de Usuario</th>
+                        <th>Apellido</th>
+                        <th>Contraseña</th>
+                        <th>Numero de Documento</th>
+                        <th>Email</th>
+                        <th>ID ROL</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user[0] }}</td>
+                        <td>{{ user[1] }}</td>
+                        <td>{{ user[2] }}</td>
+                        <td>{{ user[3] }}</td>
+                        <td>{{ user[4] }}</td>
+                        <td>{{ user[5] }}</td>
+                        <td>{{ user[7] }}</td>
+                        <td>
+                            <a href="/admin/editaruser/{{ user[0] }}"><i class="fas fa-edit"></i> Editar</a>
+                        </td>
+                        <td>
+                            <form method="POST" action="/admin/delete_user/{{ user[0] }}">
+                                <button type="submit" class="delete-button"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="/static/js/dashboardAdmin.js"></script>
+</body>
+</html>

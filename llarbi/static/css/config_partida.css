@@ -1,0 +1,61 @@
+/* Estilos generales */
+body {
+    background-color: #002b53;
+    color: #000;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #000;
+  }
+  
+  /* Formulario de configuración de partida */
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  form h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form select,
+  form input[type="time"],
+  form input[type="submit"] {
+    width: 100%;
+    padding: 5px;
+  }
+  
+  form input[type="submit"] {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  
+  /* Estilos específicos de formulario */
+  #GameMode,
+  #Players,
+  #GameTime {
+    margin-bottom: 10px;
+    width: 100%; /* Añadido para que el campo de tiempo tenga el mismo ancho */
+  }
+  
+  .navbar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  

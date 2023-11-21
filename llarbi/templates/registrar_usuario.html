@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cue Tracker - Registro</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+</head>
+
+<body class="text-center">
+  
+  <!-- Barra de navegación superior -->
+  <nav class="navbar navbar-dark">
+    <div class="container bg-dark">
+      <a class="navbar-brand" href="#">
+        <img src="../static/img/Logo.png" alt="Logo" class="navbar-logo">
+        Cue Tracker
+      </a>
+    </div>
+  </nav>
+
+
+  <form action="/registrar" method="POST" class="form-signing">
+    <h1 class="h3 mb-3 fw-normal">Registro</h1>
+
+    <div class="form-floating">
+      <label for="floatingname">Ingresa tu nombre</label>
+      <input type="text" name="userName" class="form-control" id="floatingname" placeholder="Ingresa tu nombre." required autofocus pattern="[A-Za-z0-9]{2,12}">
+    </div>
+
+    <div class="form-floating">
+      <label for="floatinglastname">Ingresa tu apellido</label>
+      <input type="text" name="lastName" class="form-control" id="floatinglastname" placeholder="Ingresa tu apellido." required pattern="[A-Za-z]{2,40}">
+    </div>
+
+    <div class="form-floating">
+      <label for="floatingemail">Ingresa tu correo</label>
+      <input type="email"  name="email"  class="form-control" id="floatingemail" placeholder="Ingresa tu correo." required pattern="{30}">
+    </div>
+
+    <div class="form-floating">
+      
+      <label for="floatingemail">Ingresa tu documento</label>
+      <input type="text" name="nodocumento" class="form-control" id="floatingdocument" placeholder="Ingresa tu documento." required pattern="{12}">
+    </div>
+
+    <div class="form-floating">
+      <label for="floatingpassword">Ingresa tu clave</label>
+      <input type="password" name="password_user" class="form-control" id="floatingpassword" placeholder="Ingresa tu clave." required pattern="[A-Za-z0-9]{8,12}">
+    </div>
+
+    <button type="submit" href="index.html" class="btn btn-dark">Enviar</button>
+    <div id="register"  style="text-align: right">
+      <a href="/">Inicio de sesion</a>
+    </div>
+  </form>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

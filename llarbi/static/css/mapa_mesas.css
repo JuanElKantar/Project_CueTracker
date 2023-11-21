@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+.contenedor-mesas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.mesa {
+    width: 140px;
+    min-height: 140px; /* Se cambió height por min-height */
+    border: 2px solid #333;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.mesa:hover {
+    background-color: #eee;
+}
+
+.ocupada {
+    background-color: #FF6961;
+}
+
+.libre {
+    background-color: #77DD77;
+}
+
+.detalle-mesa {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 15px;
+    border: 2px solid #333;
+    z-index: 999;
+    max-width: 280px;
+    border-radius: 10px;
+}
+
+.detalle-mesa h2 {
+    text-align: center;
+}
+
+.cerrar-detalle {
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+    color: #333;
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para los divs de detalles */
+.divmesaocupada,
+.divmesalibre {
+    max-height: 100px; /* Ajusta según sea necesario */
+    overflow-y: auto; /* Permite desplazamiento vertical si el contenido es más largo */
+}
+
+/* Estilo adicional para el contenido dentro de la mesa */
+.mesa-content {
+    flex: 1; /* Hace que el contenido ocupe el espacio disponible */
+    overflow-y: auto; /* Permite desplazamiento vertical si el contenido es más largo */
+}

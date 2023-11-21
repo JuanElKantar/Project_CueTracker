@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Configuración de Partida</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/config_partida.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#" class="navbar-logo"></a>
+    <img src="../static/vid/ezgif.com-video-to-gif.gif" autoplay loop alt="GIF animado" style="width: 150px; height: auto;">
+  </nav>
+  <br>
+  <br>
+  <form action="/config" method="POST">
+    <input type="hidden" id="HoraInicio" name="HoraInicio">
+    <input type="hidden" id="NumeroMesa" name="NumeroMesa"> <!-- Agregado para pasar el número de mesa -->
+    <h2>Configuración de la partida</h2>
+    <label for="GameMode">Modo de juego:</label>
+    <!-- ... (resto del formulario) ... -->
+
+    <select id="GameMode" name="GameMode">
+      <option value="pool">Pool</option>
+      <option value="tres-bandas">Tres Bandas</option>
+      <option value="libres">Libres</option>
+    </select>
+    <br>
+    <label for="Players">Número de jugadores:</label>
+    <select id="Players" name="Players">
+      <option value="1">Entrenamiento</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+    </select>
+    <label for="NumeroMesa">Seleccionar Mesa:</label>
+    <select id="NumeroMesaSelect" name="NumeroMesa">
+        <option value="1">Mesa 1</option>
+        <option value="2">Mesa 2</option>
+        <option value="3">Mesa 3</option>
+        <option value="4">Mesa 4</option>
+        <option value="5">Mesa 5</option>
+        <option value="6">Mesa 6</option>
+        <!-- Opciones adicionales para mesas adicionales -->
+    </select>
+    <br>
+    <br>
+    <input type="submit" value="Guardar" onclick="setHoraInicio()">
+</form>
+
+<script>
+    function setHoraInicio() {
+        var horaActual = new Date();
+        var horaInicioInput = document.getElementById('HoraInicio');
+        var numeroMesaSelect = document.getElementById('NumeroMesaSelect');
+        var numeroMesaInput = document.getElementById('NumeroMesa');
+
+        horaInicioInput.value = horaActual.toLocaleTimeString();
+        numeroMesaInput.value = numeroMesaSelect.value; // Establecer el número de mesa en el campo oculto
+    }
+</script>
+
+ 
+
+</body>
+</html>

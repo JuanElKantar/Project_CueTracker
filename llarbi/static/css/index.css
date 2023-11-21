@@ -1,0 +1,98 @@
+/* Estilos generales */
+body {
+    background-color: #002b53;
+    color: #000;
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #000;
+  }
+  
+  /* Barra de navegación */
+  .navbar {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .navbar-brand {
+    margin-left: 20px;
+    font-size: 24px;
+  }
+  
+  .navbar-logo {
+    height: 80px;
+    margin-right: 40px;
+  }
+  
+  /* Formulario de inicio de sesión */
+  .Formulario {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Formulario .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Formulario img {
+    height: 180px;
+    margin-bottom: 20px;
+  }
+  
+  .Formulario form {
+    width: 100%;
+  }
+  
+  .Formulario .form-floating {
+    margin-bottom: 20px;
+  }
+  
+  .Formulario .form-floating label {
+    color: #000;
+  }
+  
+  .Formulario .form-floating input {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    text-align: center; /* Centrar el texto */
+    box-sizing: border-box; /* Asegurar el tamaño correcto del input */
+    margin: 0; /* Eliminar cualquier margen */
+  }
+  
+  .Formulario .btn {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .Formulario #register {
+    text-align: center;
+  }
+  
+  .Formulario #register a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .Formulario #register a:hover {
+    text-decoration: underline;
+  }
+  

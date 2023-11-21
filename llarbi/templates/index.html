@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulario de inicio de sesión</title>
+  <link rel="stylesheet" type="text/css" href="../static/css/index.css">
+</head>
+<body>
+  <!-- Barra de navegación superior -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">
+    </a>
+    <img src="../static/vid/ezgif.com-video-to-gif.gif" autoplay loop alt="GIF animado" style="width: 150px; height: auto;">
+  </nav>
+ <br>
+ <br>
+  <div class="Formulario"> 
+    <div class="container">
+
+      <h2>Inicio de Sesion</h2>
+      <form action="/login" method="post"> <!-- Cambia la acción a /login -->
+
+        <input type="number" class="form-control" id="floatingdocument" name="nodocumento" placeholder="Ingresa tu numero de documento" required autofocus>
+
+        <input type="password" class="form-control" id="floatingpassword" name="password" placeholder="Ingresa tu clave"> <!-- Cambia el nombre del campo a "password" -->
+        {% if show_error %}
+        <p style="color: red;">Credenciales incorrectas. Por favor, verifica tus datos.</p>
+        {% endif %}
+        <button type="submit" class="btn btn-dark">Ingresa</button>
+        <div id="register">
+          <a href="/registrar">Registrate</a>
+          <a href="/config">Juega como invitado</a>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

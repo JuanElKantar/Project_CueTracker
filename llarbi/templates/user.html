@@ -1,0 +1,45 @@
+
+
+
+<!-- Archivo 1: dashboardAdmin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/user.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/dashboardAdmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Agrega el enlace a FontAwesome -->
+    <title>Panel de Usuario</title>
+</head>
+<body>
+
+    <h1>Bienvenido, {{ nombre_jugador }}</h1>
+    <p>ID del jugador: {{ jugador_id }}</p>
+    <div class="sidebar" id="sidebar">
+        <i class="fas fa-cogs settings-icon" id="settings-icon"></i> <!-- Icono de ajustes -->
+        <h2>Opciones</h2>
+        <ul>
+            
+           
+            <li><i class="fas fa-users"></i> <a href="/admin/editaruser/1">Configurar perfil</a></li>         
+            <li><i class="fas fa-users"></i> <a href="/config">Iniciar partida</a></li>
+            <li><i class="fas fa-users"></i> <a href="/oneplayer">Modo entrenamiento</a></li>
+            <li><i class="fas fa-users"></i> <a href="/admin/partida">Ver partidas jugadas</a></li>
+            <li><i class="fas fa-sign-out-alt"></i> <a href="/">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        <header>
+            <h1>Panel para Usuario</h1>
+        </header>
+        <main>
+            <!-- Contenido del Dashboard aquí -->
+        </main>
+    </div>
+
+    <script src="/static/js/dashboardAdmin.js"></script>
+</body>
+</html>
+
+
